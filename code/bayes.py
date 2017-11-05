@@ -1,6 +1,4 @@
 from __future__ import division
-import scipy as sio
-from scipy.sparse.csr import csr_matrix
 import numpy as np
 
 class MultinomialNB(object):
@@ -24,5 +22,5 @@ class MultinomialNB(object):
     def predict(self, X):
         X = X.toarray()
         temp = np.argmax(self.predict_log_proba(X), axis=1)
-        toReturn = [self.classes[i] for i in temp]
-        return toReturn
+        returnVal = [self.classes[i] for i in temp]
+        return returnVal
